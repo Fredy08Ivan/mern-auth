@@ -1,0 +1,8 @@
+import cena4 from "./jgp/cena4.jgp";
+
+const imagenes={
+    cena4,
+
+}
+
+export { imagenes}
