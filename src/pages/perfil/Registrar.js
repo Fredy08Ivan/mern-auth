@@ -92,7 +92,7 @@ function Registrar() {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit"
+            <button type="button"
             disabled={username === "" && password === ""}
             onClick={register} 
             className="btn btn-primary">

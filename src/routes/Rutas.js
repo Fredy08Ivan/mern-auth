@@ -38,7 +38,7 @@ export function Rutas() {
     <Routes>
 
       
-      <Route path="/" element={loadLayouts(Layout, Login)} />
+      <Route path="/" element={<Login/>} />
       
 
       <Route path="/NiceFood" element={loadLayouts(Layout, Home)} />

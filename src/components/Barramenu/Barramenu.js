@@ -1,8 +1,32 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function Barramenu() {
+  const datos ={
+    token:""
+  }
+
+  const [token, setToken] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    if (!storedToken) {
+      navigate("/login");
+    } else {
+      setToken(storedToken);
+      
+    }
+  }, [navigate]);
+
+  const logOut = () => {
+    localStorage.setItem('token', null);
+    navigate("/");
+  }
+
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -109,6 +133,10 @@ function Barramenu() {
                 </Link>
               </li>
             </ul>
+            <div className='btn btn-danger'          onClick={logOut}
+>
+            logout
+            </div>
           </div>
         </span>
       </div>

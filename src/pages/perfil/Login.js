@@ -13,8 +13,8 @@ function Login() {
   });
 
   const navigate = useNavigate();
-  const onChange = (e) =>
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  const onChange = (e) =>{
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });}
 
   const login = () => {
     const salt = bcrypt.genSaltSync(10);
@@ -77,7 +77,7 @@ function Login() {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" 
+            <button type="button" 
             disabled={credentials.username === '' && credentials.password === ''}
             onClick={login}
             className="btn btn-primary">
